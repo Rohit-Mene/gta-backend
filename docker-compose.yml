@@ -1,0 +1,20 @@
+version: "3.2"
+
+services:
+  mysql:
+    build:
+      context: .
+      dockerfile: Dockerfile.mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: gta-login-db
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+    ports:
+      - "3306:3306"
+
+  gta_application:
+    container_name: gta_application
+    build: .
+    ports:
+      - "8080:8080"

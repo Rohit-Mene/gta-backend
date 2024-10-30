@@ -1,0 +1,11 @@
+# Use the official MySQL image from Docker Hub
+FROM mysql:8.0
+
+# Set the environment variables for the MySQL database
+ENV MYSQL_DATABASE=gta-login-db
+ENV MYSQL_USER=admin
+ENV MYSQL_PASSWORD=admin
+ENV MYSQL_ROOT_PASSWORD=admin
+
+# Expose the default MySQL port
+EXPOSE 3306
